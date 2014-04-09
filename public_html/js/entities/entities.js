@@ -17,8 +17,14 @@ game.PlayerEntity = me.ObjectEntity.extend({
         if(me.input.isKeyPressed("right")) {
             this.vel.x += this.accel.x * me.timer.tick;
         }
+        else if(me.input.isKeyPressed("left")) {
+            this.vel.x -= this.accel.x * me.timer.tick;
+        }
         else {
             this.vel.x = 0;
+        }
+             if(me.input.isKeyPressed("up")) {
+            this.vel.y -= this.accel.x * me.timer.tick;
         }
         
         var collision = this.collide();

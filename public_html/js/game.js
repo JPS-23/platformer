@@ -46,6 +46,8 @@ var game = {
                 me.entityPool.add("levelTrigger", game.LevelTrigger);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
+                me.input.bindKey(me.input.KEY.LEFT, "left");
+                me.input.bindKey(me.input.KEY.UP, "up");
 
 		// Start the game.
 		me.state.change(me.state.PLAY);
