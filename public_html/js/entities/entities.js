@@ -28,6 +28,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
              if(me.input.isKeyPressed("up")) {
             this.vel.y -= this.accel.x * me.timer.tick;
         }
+        else{
+            this.vel.y = 3;
+            }
         
         var collision = this.collide();
         this.updateMovement();

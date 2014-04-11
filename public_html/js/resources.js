@@ -6,8 +6,9 @@ game.resources = [
 	 */
         { name: "background-tiles", type: "image", src: "data/img/background-tiles.png" },
         { name: "player1-spritesheet", type: "image", src: "data/img/player1-spritesheet.png" },
-        { name: "solid-tile", type: "image", src: "data/img/solid-tile.png" },
         { name: "item-spritesheet", type: "image", src: "data/img/item-spritesheet.png" },
+        { name: "cloud-tiles", type: "image", src: "data/img/cloud-tiles.png" },
+        { name: "meta-tiles", type: "image", src: "data/img/meta-tiles.png" },
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
