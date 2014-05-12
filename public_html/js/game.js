@@ -49,6 +49,7 @@ var game = {
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
                 me.input.bindKey(me.input.KEY.UP, "up");
+                me.input.bindKey(me.input.KEY.SPACE, "space");
 
 		// Start the game.
 		me.state.change(me.state.PLAY);
