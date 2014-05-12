@@ -3,6 +3,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
         settings.image = "player1-spritesheet";
         settings.spritewidth = "72";
         settings.spriteheight = "97";
+        settings.width = 72;
+        settings.height = 97;
         this.parent(x, y, settings);
         
         this.collidable = true;
@@ -15,7 +17,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
     },
     
-    update: function() {
+    update: function(deltaTime) {
         if(me.input.isKeyPressed("right")) {
             this.vel.x += this.accel.x * me.timer.tick;
         }
@@ -32,8 +34,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
             this.vel.y = 3;
             }
         
-        var collision = this.collide();
+        var collision = me.game.world.collide(this);
         this.updateMovement();
+        //this.parent(deltaTime);
         return true;
         
 
@@ -49,7 +52,22 @@ game.LevelTrigger = me.ObjectEntity.extend ({
             
     onCollision: function() {
         this.collidable = false;
-        me.levelDirector.loadLevel.defer(this.level);
-        me.state.current().resetPlayer.defer();
+        me.levelDirector.loadLevel(this.level);
+        me.state.current().resetPlayer();
+    }
+});
+
+game.EnemyEntity = me.ObjectEntity.extend({
+    init: function(x, y, settings) {
+        settings.image = "slime-spritesheet";
+        settings.spritewidth = "60";
+        settings.spriteheight = "28";
+        settings.width = 60;
+        settings.height = 28;
+        this.parent(x, y, settings);
+    },
+    
+    update: function(deltaTime) {
+
     }
 });
